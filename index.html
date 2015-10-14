@@ -13,6 +13,8 @@
 
   <!-- Controllers -->
   <script src="js/controllers/MainControllerTest.js"></script>
+  <script src="js/directives/programInfo.js"></script>
+
 </head>
 <body ng-app="BoltNetworkApp">
   <div class="header">
@@ -24,37 +26,7 @@
   <div class="main" ng-controller="MainController">
     <div class="container">
       <div class="content" ng-repeat="program in data">
-        <h2>{{program.series}}</h2>
-        <div class="row">
-
-          <div class="col-md-3" class="series_img">
-            <img ng-src="{{program.series_img}}"/>
-            
-          </div>
-
-          <div class="col-md-6">
-            <h1 class="series">
-              {{program.Sherlock}}</h1>
-              <h2 class="episode">
-                {{program.episode}}
-              </h2>
-              <p class="description">
-                {{program.description}}
-              </p>
-            </div>
-
-            <div class="col-md-3">
-              <ul class="list-group">
-                <li class="list-group-item"><span>Date: {{program.series}}</span>  </li>
-                <li class="list-group-item"><span>On air: {{program.episode}}</span>  </li>
-                <li class="list-group-item"><span>Time:{{program.datetime | date}}</span>  </li>
-                <li class="list-group-item"><span>Season: {{program.season}}</span>  </li>
-                <li class="list-group-item"><span>Genre: {{program.genre}}</span>  </li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
+        <program-info program="program"></program-info>
       </div>
     </div>
 
